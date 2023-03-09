@@ -11,7 +11,6 @@ final class ViewController: UIViewController {
     
     private let slider = UISlider(frame: CGRect(x: 20, y: 20,
                                                 width: 40, height: 40))
-    
     private let rectangle: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
     private var degree = CGFloat(Double.pi/180)
     
@@ -44,7 +43,7 @@ final class ViewController: UIViewController {
         slider.tintColor = .lightGray
         slider.thumbTintColor = .white
         slider.addTarget(self, action: #selector(animateView), for: .valueChanged)
-        slider.addTarget(self, action: #selector(animateSlider), for: [.touchUpInside, .valueChanged])
+        slider.addTarget(self, action: #selector(animateSlider), for: .touchUpOutside)
     }
     
     private func setupRectangle() {
